@@ -13,17 +13,20 @@
             <link>https://input-output-hk.github.io/cardano-updates/2022-10-28-network</link>
             <guid>2022-10-28-network</guid>
             <pubDate>Fri, 28 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[P2P Network Stack]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="p2p-network-stack">P2P Network Stack<a class="hash-link" href="#p2p-network-stack" title="Direct link to heading">​</a></h2><p>During the past two weeks the team focused on p2p single relay release and peer
+            <description><![CDATA[The team has focused on debuging & fixing bugs for the P2P single relay release, which included]]></description>
+            <content:encoded><![CDATA[<p>The team has focused on debuging &amp; fixing bugs for the <strong>P2P single relay release</strong>, which included</p><ul><li>diagnosing, fixing and writing tests for a bug in <code>peer-state-actions</code> which
+fortunately hasn't been released;</li><li>diagnosing &amp; preventing misconfiguration of DNS</li></ul><p>We also focused on developing <strong>peer sharing</strong>.  We also held a session with
+the scientists on eclipse evasion.</p><h1>Detailed description</h1><h2 class="anchor anchorWithStickyNavbar_LWe7" id="p2p-network-stack">P2P Network Stack<a class="hash-link" href="#p2p-network-stack" title="Direct link to heading">​</a></h2><p>During the past two weeks the team focused on p2p single relay release and peer
 sharing.  We found and fixed an important bug recently introduced in one of the
 components of p2p networking stack (fortunately never released).  Together with
 a fix, we designed a unit test diffusion simulation as well as quickcheck
 property test (both could reproduce it). We also changed the code in a way that
-if such a bug is reintroduced in the future, it will be obvious to diagnose.</p><p>Initial benchmarking run of the P2P code was executed.  The results where
+if such a bug is reintroduced in the future, it will be obvious to diagnose.
+For more see:</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4067" target="_blank" rel="noopener noreferrer">ouroboros-network#4067</a></li><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4086" target="_blank" rel="noopener noreferrer">ouroboros-network#4086</a></li></ul><p>Initial benchmarking run of the P2P code was executed.  The results where
 unlike what we see on the mainnet.  We found a possible misconfiguration of the
 cluster (caused by 0 TTL on domain names), which could be the direct cause of
 it.  We wrote a PR which rules out such misconfiguration.  We are awaiting on
-the next benchmarking results.</p><p>We also started working on P2P single relay release.  The PR
+the next benchmarking results.  See more at:</p><p><a href="https://github.com/input-output-hk/ouroboros-network/pull/4106" target="_blank" rel="noopener noreferrer">ouroboros-network#4106</a></p><p>We also started working on P2P single relay release.  The PR
 <a href="https://github.com/input-output-hk/ouroboros-network/pull/4120" target="_blank" rel="noopener noreferrer">ouroboros-network#4120</a>
 includes <em>108</em> patches cherry-picked from the <code>master</code> branch.  We started
 working toward integration these changes against the release branch of
@@ -31,14 +34,15 @@ working toward integration these changes against the release branch of
 of <code>cardano-node</code> with <em>non experimental P2P support</em>!</p><p>For more detailed release plan please see <a href="https://github.com/input-output-hk/ouroboros-network/issues/3888" target="_blank" rel="noopener noreferrer">P2P - Single
 Relay</a>
 issue.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="consensus">Consensus<a class="hash-link" href="#consensus" title="Direct link to heading">​</a></h2><p>We identified and fixed missing error reporting in consensus
-initialisation phase.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="cardano-node">Cardano Node<a class="hash-link" href="#cardano-node" title="Direct link to heading">​</a></h2><p>We also made changes in <code>cardano-node</code> in order to give better experience for
+initialisation phase.  See more at
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4015" target="_blank" rel="noopener noreferrer">ouroboros-network#4015</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="cardano-node">Cardano Node<a class="hash-link" href="#cardano-node" title="Direct link to heading">​</a></h2><p>We also made changes in <code>cardano-node</code> in order to give better experience for
 node operators.  This includes updating severities of some of the traces as
-well as implementing new format of the p2p topology file.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="peer-sharing">Peer Sharing<a class="hash-link" href="#peer-sharing" title="Direct link to heading">​</a></h2><p>We continued working on implementation of peer sharing.  We have an early
+well as implementing new format of the p2p topology file.  For more see:</p><ul><li><a href="https://github.com/input-output-hk/cardano-node/pull/4563" target="_blank" rel="noopener noreferrer">cardano-node#4563</a>.</li><li><a href="https://github.com/input-output-hk/cardano-node/pull/4561" target="_blank" rel="noopener noreferrer">cardano-node#4561</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="peer-sharing">Peer Sharing<a class="hash-link" href="#peer-sharing" title="Direct link to heading">​</a></h2><p>We continued working on implementation of peer sharing.  We have an early
 implementation which will be reviewed and analysed in next weeks.  We started
 working on <code>cardano-node</code> integration.  We need
 <a href="https://github.com/input-output-hk/cardano-node/pull/4392" target="_blank" rel="noopener noreferrer">PR #4392</a> to be merged
 before such integration will be able to land in <code>cardano-node</code>, although this
-is <em>not blocking</em> us currently.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="eclipse-evasion">Eclipse Evasion<a class="hash-link" href="#eclipse-evasion" title="Direct link to heading">​</a></h2><p>We held a session which included Alexander Russel, Sandro Coretti-Drayton and
+is <em>not blocking</em> us currently.  See more at:</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4019" target="_blank" rel="noopener noreferrer">ouroboros-network#4019</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="eclipse-evasion">Eclipse Evasion<a class="hash-link" href="#eclipse-evasion" title="Direct link to heading">​</a></h2><p>We held a session which included Alexander Russel, Sandro Coretti-Drayton and
 Nick Frisby from the consensus team.  We discussed high lever design of the
 eclipse evasion scheme, which is important for the design and implementation of
 <code>ouroboros-genesis</code>.  We got a positive feedback from the researchers.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="io-sim">IO-Sim<a class="hash-link" href="#io-sim" title="Direct link to heading">​</a></h2><p>In this period we made little progress towards releasing <code>IO-Sim</code> on Hackage.
@@ -46,8 +50,7 @@ A single <a href="https://github.com/input-output-hk/io-sim/pull/32" target="_bl
 a few missing instances of the <code>STM</code> monad.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="open-source">Open Source<a class="hash-link" href="#open-source" title="Direct link to heading">​</a></h2><p>We made sure the CI runs for PRs which comes from forks (which is important to
 accept contributions from 3rd parties).</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="mithril-cardano-integration">Mithril Cardano Integration<a class="hash-link" href="#mithril-cardano-integration" title="Direct link to heading">​</a></h2><p>We held initial discussions with Arnaud Bailly about possible path to integrate
 mithril to <code>cardano-node</code> and take advantage of the <code>ouroboros-network</code>
-diffusion layer.</p><h1>Additional information</h1><h2 class="anchor anchorWithStickyNavbar_LWe7" id="p2p-single-relay-release">P2P Single Relay Release<a class="hash-link" href="#p2p-single-relay-release" title="Direct link to heading">​</a></h2><p>The bug was caused by a blocking action which caused locked hot peers of the
-outbound governor, even if the bearer errored.  The fixed and tests where implemented in:</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4067" target="_blank" rel="noopener noreferrer">ouroboros-network#4067</a></li><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4086" target="_blank" rel="noopener noreferrer">ouroboros-network#4086</a></li></ul><p>The DNS TTL issue was solved in:</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4106" target="_blank" rel="noopener noreferrer">ouroboros-network#4106</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="consensus-1">Consensus<a class="hash-link" href="#consensus-1" title="Direct link to heading">​</a></h2><p>The early error reporting of consensus was addressed in</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4015" target="_blank" rel="noopener noreferrer">ouroboros-network#4015</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="cardano-node-1">Cardano Node<a class="hash-link" href="#cardano-node-1" title="Direct link to heading">​</a></h2><p>The new topology format is in review:</p><ul><li><a href="https://github.com/input-output-hk/cardano-node/pull/4563" target="_blank" rel="noopener noreferrer">cardano-node#4563</a></li></ul><p>Tracing improvements:</p><ul><li><a href="https://github.com/input-output-hk/cardano-node/pull/4561" target="_blank" rel="noopener noreferrer">cardano-node#4561</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="peer-sharing-1">Peer Sharing<a class="hash-link" href="#peer-sharing-1" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4019" target="_blank" rel="noopener noreferrer">ouroboros-network#4019</a></li></ul>]]></content:encoded>
+diffusion layer.</p>]]></content:encoded>
             <category>network</category>
         </item>
         <item>
