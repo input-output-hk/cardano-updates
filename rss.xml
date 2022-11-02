@@ -213,13 +213,13 @@ as well. [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3068" 
             <guid>2022-10-05-consensus</guid>
             <pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[High level summary]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>This week, the consensus team worked on improving the performance of the
-ChainSync jumping logic, which is needed for Genesis. We also rewrote the
-implementation of the mempool in the UTxO HD prototype which solved the issues
-that prevented us from running system level benchmarks. Also on the UTxO HD
-front, we have an improved implementation of the sequence-of-differences (a
-crucial piece of UTxO HD), and we also elaborated a test sign-off list for the
-UTxO HD feature.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="executive-summary">Executive summary<a class="hash-link" href="#executive-summary" title="Direct link to heading">​</a></h2><ul><li>With the latest implementation of ChainSync jumping we are closer to the
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>During the past two weeks, the consensus team worked on improving the
+performance of the ChainSync jumping logic, which is needed for Genesis. We also
+rewrote the implementation of the mempool in the UTxO HD prototype which solved
+the issues that prevented us from running system level benchmarks. Also on the
+UTxO HD front, we have an improved implementation of the sequence-of-differences
+(a crucial piece of UTxO HD), and we also elaborated a test sign-off list for
+the UTxO HD feature.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="executive-summary">Executive summary<a class="hash-link" href="#executive-summary" title="Direct link to heading">​</a></h2><ul><li>With the latest implementation of ChainSync jumping we are closer to the
 baseline performance. In particular, the prototype seems to benefit from the
 extra concurrency provided by additional capabilities.</li><li>We rewrote the implementation of the mempool in the UTxO HD prototype. This
 rewrite was required due to performance problems we observed when running the
