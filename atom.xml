@@ -8,6 +8,19 @@
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[hydra]]></title>
+        <id>/2022/10/28/hydra</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022/10/28/hydra"/>
+        <updated>2022-10-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>This week, the hydra team completed several user experience improvements to the
+<code>hydra-tui</code> and <code>hydra-node</code>, and delivered a first version of persisted head
+states by publishing release version
+<a href="https://github.com/input-output-hk/hydra-poc/releases/tag/0.8.0" target="_blank" rel="noopener noreferrer"><code>0.8.0</code></a>.
+Besides this, they met with researchers on topic of the HeadV1 specification and
+kicked-off work on the RFP for an external audit of the Hydra Head protocol and implementation.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-did-the-team-achieve-this-week">What did the team achieve this week<a class="hash-link" href="#what-did-the-team-achieve-this-week" title="Direct link to heading">​</a></h2><ul><li>Completed the UX improvements on the <code>hydra-tui</code></li><li>Released version <a href="https://github.com/input-output-hk/hydra-poc/releases/tag/0.8.0" target="_blank" rel="noopener noreferrer"><code>0.8.0</code></a>, which delivers a first version of persisted head states</li><li>Met with researchers on the HeadV1 specification</li><li>Started work on the RFP for our external audit</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-the-goals-of-next-week">What are the goals of next week<a class="hash-link" href="#what-are-the-goals-of-next-week" title="Direct link to heading">​</a></h2><ul><li>Complete ADR18 implementation and get it merged</li><li>Start work on event-sourced persistence <a href="https://github.com/input-output-hk/hydra-poc/issues/580" target="_blank" rel="noopener noreferrer">#580</a></li><li>Have a first plutus script gap closed <a href="https://github.com/input-output-hk/hydra-poc/issues/452" target="_blank" rel="noopener noreferrer">#452</a></li><li>Revamp CI to use flakes and build macos artifacts (stretch goal: migrate to cicero for nix builds)</li></ul>]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Network Team Update]]></title>
         <id>2022-10-28-network</id>
         <link href="https://input-output-hk.github.io/cardano-updates/2022-10-28-network"/>
