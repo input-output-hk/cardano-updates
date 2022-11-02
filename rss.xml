@@ -70,6 +70,43 @@ used for tie-breaking.</p>]]></content:encoded>
             <category>consensus</category>
         </item>
         <item>
+            <title><![CDATA[Ledger Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-10-14-ledger</link>
+            <guid>2022-10-14-ledger</guid>
+            <pubDate>Wed, 02 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>We have made the decision to use the
+<a href="https://github.com/input-output-hk/formal-ledger-specifications" target="_blank" rel="noopener noreferrer">formal ledger repository</a>
+in place of a LaTeX spec for the next ledger era, and have added a lot of basic infrastructure
+to the model. In particular, we now have a lot of support for axiomatic set theory.
+While the next ledger era is still in the design phase, most of the team remains working
+on technical debt.
+In particular, we have moved a lot more code out of the Shelley specific modules and into
+a ledger core module, we have finished up our benchmarking around the problematic <code>TICKF</code>
+ledger transition (while improving the performance), made conveniences to the development
+environment, cleaned up all the recent changes to the cost model, added a lot of documentation,
+fixed some flaky tests, and deleted some dead code.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="axiomatic-set-theory">Axiomatic Set Theory<a class="hash-link" href="#axiomatic-set-theory" title="Direct link to heading">​</a></h3><p>The formal ledger model now has support for much of the set theory that we make use of in
+the formal ledger specifications. See [<a href="https://github.com/input-output-hk/formal-ledger-specifications/pull/20" target="_blank" rel="noopener noreferrer">pull-20</a>].</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="completed-technical-debt">Completed Technical Debt<a class="hash-link" href="#completed-technical-debt" title="Direct link to heading">​</a></h3><ul><li>We have addressed issues with two of our most problematic and flaky tests.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3039" target="_blank" rel="noopener noreferrer">pull-3039</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3093" target="_blank" rel="noopener noreferrer">pull-3093</a>].</li><li>We have added more documentation and tests to the Twiddler module. This is a module which
+makes our CBOR serialization round-trip tests much more robust, and will also hopefully
+help enforce the mandate for downstream libraries to never re-serialize data that needs
+to be hashed. See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3073" target="_blank" rel="noopener noreferrer">pull-3073</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3095" target="_blank" rel="noopener noreferrer">pull-3095</a>]
+(we cannot merge 3095 just yet, due to a preference for merging other features).</li><li>We have finished our long analysis of the problematic <code>TICKF</code> transition.
+We now have a lot of benchmarks surrounding this code, and have added performance improvements.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3068" target="_blank" rel="noopener noreferrer">pull-3068</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/issues/3035" target="_blank" rel="noopener noreferrer">issue-3035</a>].</li><li>We have restored support for
+<a href="https://hackage.haskell.org/package/ghcid" target="_blank" rel="noopener noreferrer">ghcid</a>
+in our repository. This is a tool for developing with Haskell that many of us find greatly
+improves our productivity by providing us with constant feedback from the type checker.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3112" target="_blank" rel="noopener noreferrer">pull-3112</a>].</li><li>After much activity on the cost model, we have done some final clean up of the code.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3075" target="_blank" rel="noopener noreferrer">pull-3075</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3101" target="_blank" rel="noopener noreferrer">pull-3101</a>].</li><li>We moved a lot of the existing user facing documentation regarding native tokens into the
+ledger repository, and cleaned it up
+(most of the heavy lifting was done by our amazing technical writers).
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3091" target="_blank" rel="noopener noreferrer">pull-3091</a>].</li><li>We removed dead code. See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3089" target="_blank" rel="noopener noreferrer">pull-3089</a>].</li><li>We moved a lot of code from the Shelley specific libraries to the ledger core library.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3109" target="_blank" rel="noopener noreferrer">pull-3109</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3110" target="_blank" rel="noopener noreferrer">pull-3110</a>].</li><li>We've removed more of the awkward legacy template Haskell names.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3108" target="_blank" rel="noopener noreferrer">pull-3108</a>].</li></ul>]]></content:encoded>
+            <category>ledger</category>
+        </item>
+        <item>
             <title><![CDATA[Hydra Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-10-28-hydra</link>
             <guid>2022-10-28-hydra</guid>
@@ -259,36 +296,35 @@ Byron-to-Shelley transition).</p><ul><li>Red: baseline</li><li>Green: CSJ protot
             <guid>2022-10-14-ledger</guid>
             <pubDate>Fri, 14 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[High level summary]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>The ledger team is still primarily focused on addressing
-<a href="https://github.com/input-output-hk/cardano-ledger/issues?q=is%3Aissue+is%3Aopen+label%3A%22%3Acredit_card%3A+technical-debt%22" target="_blank" rel="noopener noreferrer">technical</a>
-<a href="https://github.com/input-output-hk/cardano-ledger/projects/3" target="_blank" rel="noopener noreferrer">debt</a>.
-We now have the infrastructure for versioning our serialization schemes,
-which we continue to put into action.
-We have made first steps towards getting proper support for the
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>We have made the decision to use the
 <a href="https://github.com/input-output-hk/formal-ledger-specifications" target="_blank" rel="noopener noreferrer">formal ledger repository</a>
-(in particular, we've added nix builds and
-continuous integration support).
-We are wrapping up an investigation of the performance of a critical
-function used by the consensus layer for leader checks.
-Finally, we are improving the packaging and versioning of our code.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="completed-technical-debt">Completed Technical Debt<a class="hash-link" href="#completed-technical-debt" title="Direct link to heading">​</a></h3><ul><li>Because the Shelley ledger era was a complete re-write of the Byron ledger era, a lot of
-our code lives in the <code>cardano-ledger-shelley</code> package, though with hindsight we can say that
-much of it should live in <code>cardano-ledger-core</code>.
-We continue to move things to <code>cardano-ledger-core</code>, and have much more to come. [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3059" target="_blank" rel="noopener noreferrer">pull-3059</a>]</li><li>We now have the infrastructure to support <strong>versioned</strong> serialization schemes.
-The inability to do this has caused us a lot difficulties,
-such as [<a href="https://github.com/input-output-hk/cardano-ledger/issues/3003" target="_blank" rel="noopener noreferrer">issue-3003</a>], [<a href="https://github.com/input-output-hk/cardano-ledger/issues/2965" target="_blank" rel="noopener noreferrer">issue-2965</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/issues/2444" target="_blank" rel="noopener noreferrer">issue-2444</a>].
-We are still in the process of switching to the versioned serialization scheme
-(such as [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3078" target="_blank" rel="noopener noreferrer">pull-3078</a>]),
-but the infrastructure was completed in [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3063" target="_blank" rel="noopener noreferrer">pull-3063</a>].</li><li>We now have proper nix and CI support for the formal ledger project. [<a href="https://github.com/input-output-hk/formal-ledger-specifications/pull/19" target="_blank" rel="noopener noreferrer">pull-19</a>]</li><li>A separate team is helping bring support for
-<a href="https://github.com/input-output-hk/cardano-haskell-packages" target="_blank" rel="noopener noreferrer">CHaP</a>
-to all the cardano-node repositories.
-We have been helping out with this effort.</li></ul><ul><li>A separate team continues working on upgrading all the
-cardano-node repositories to work with ghc 9.2.4.
-We have been helping out with this effort.</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="in-progress-technical-debt">In-progress Technical Debt<a class="hash-link" href="#in-progress-technical-debt" title="Direct link to heading">​</a></h3><p>We also have several fairly large pull-requests in review
-that we are working on.</p><ul><li>In an on-going attempt to build out a more user-friendly API,
-we continue to remove <code>HasField</code> instances in place of using micro-lenses.
-The protocol parameters, in particular, are being worked on. [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3045" target="_blank" rel="noopener noreferrer">pull-3045</a>]</li><li>We are also renaming record fields to be consistent across the repository. [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3062" target="_blank" rel="noopener noreferrer">pull-3062</a>]</li><li>We are now cleaning up all the work we did to understand the performance
-of the TICKF transition. We have some improvements to the computatation
-as well. [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3068" target="_blank" rel="noopener noreferrer">pull-3068</a>]</li><li>We are adding more documentation, in particular to our <code>Twiddler</code> functionality. [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3073" target="_blank" rel="noopener noreferrer">pull-3073</a>]</li><li>The formal ledger is adding support for finite set theory. [<a href="https://github.com/input-output-hk/formal-ledger-specifications/pull/20" target="_blank" rel="noopener noreferrer">pull-20</a>]</li></ul>]]></content:encoded>
+in place of a LaTeX spec for the next ledger era, and have added a lot of basic infrastructure
+to the model. In particular, we now have a lot of support for axiomatic set theory.
+While the next ledger era is still in the design phase, most of the team remains working
+on technical debt.
+In particular, we have moved a lot more code out of the Shelley specific modules and into
+a ledger core module, we have finished up our benchmarking around the problematic <code>TICKF</code>
+ledger transition (while improving the performance), made conveniences to the development
+environment, cleaned up all the recent changes to the cost model, added a lot of documentation,
+fixed some flaky tests, and deleted some dead code.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="axiomatic-set-theory">Axiomatic Set Theory<a class="hash-link" href="#axiomatic-set-theory" title="Direct link to heading">​</a></h3><p>The formal ledger model now has support for much of the set theory that we make use of in
+the formal ledger specifications. See [<a href="https://github.com/input-output-hk/formal-ledger-specifications/pull/20" target="_blank" rel="noopener noreferrer">pull-20</a>].</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="completed-technical-debt">Completed Technical Debt<a class="hash-link" href="#completed-technical-debt" title="Direct link to heading">​</a></h3><ul><li>We have addressed issues with two of our most problematic and flaky tests.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3039" target="_blank" rel="noopener noreferrer">pull-3039</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3093" target="_blank" rel="noopener noreferrer">pull-3093</a>].</li><li>We have added more documentation and tests to the Twiddler module. This is a module which
+makes our CBOR serialization round-trip tests much more robust, and will also hopefully
+help enforce the mandate for downstream libraries to never re-serialize data that needs
+to be hashed. See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3073" target="_blank" rel="noopener noreferrer">pull-3073</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3095" target="_blank" rel="noopener noreferrer">pull-3095</a>]
+(we cannot merge 3095 just yet, due to a preference for merging other features).</li><li>We have finished our long analysis of the problematic <code>TICKF</code> transition.
+We now have a lot of benchmarks surrounding this code, and have added performance improvements.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3068" target="_blank" rel="noopener noreferrer">pull-3068</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/issues/3035" target="_blank" rel="noopener noreferrer">issue-3035</a>].</li><li>We have restored support for
+<a href="https://hackage.haskell.org/package/ghcid" target="_blank" rel="noopener noreferrer">ghcid</a>
+in our repository. This is a tool for developing with Haskell that many of us find greatly
+improves our productivity by providing us with constant feedback from the type checker.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3112" target="_blank" rel="noopener noreferrer">pull-3112</a>].</li><li>After much activity on the cost model, we have done some final clean up of the code.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3075" target="_blank" rel="noopener noreferrer">pull-3075</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3101" target="_blank" rel="noopener noreferrer">pull-3101</a>].</li><li>We moved a lot of the existing user facing documentation regarding native tokens into the
+ledger repository, and cleaned it up
+(most of the heavy lifting was done by our amazing technical writers).
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3091" target="_blank" rel="noopener noreferrer">pull-3091</a>].</li><li>We removed dead code. See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3089" target="_blank" rel="noopener noreferrer">pull-3089</a>].</li><li>We moved a lot of code from the Shelley specific libraries to the ledger core library.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3109" target="_blank" rel="noopener noreferrer">pull-3109</a>] and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3110" target="_blank" rel="noopener noreferrer">pull-3110</a>].</li><li>We've removed more of the awkward legacy template Haskell names.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3108" target="_blank" rel="noopener noreferrer">pull-3108</a>].</li></ul>]]></content:encoded>
             <category>ledger</category>
         </item>
         <item>
