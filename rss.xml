@@ -107,6 +107,26 @@ See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3108" targe
             <category>ledger</category>
         </item>
         <item>
+            <title><![CDATA[DB Sync Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-11-01-db-sync</link>
+            <guid>2022-11-01-db-sync</guid>
+            <pubDate>Tue, 01 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>The DBSync team is preparing a release which introduces schema simplifications, removes indexes,
+unique and foreign keys. It also provides a way to fix older values and migrates without the need to
+resync from genesis.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="schema-simplifications">Schema simplifications<a class="hash-link" href="#schema-simplifications" title="Direct link to heading">​</a></h3><p>Indexes, Unique and Foreign keys are removed in order to speedup syncing
+<a href="https://github.com/input-output-hk/cardano-db-sync/pull/1295" target="_blank" rel="noopener noreferrer">#1295</a>
+The same pr also introduces a different way to rollback, which doesn't rely on foreign keys and
+indexes.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance">Performance<a class="hash-link" href="#performance" title="Direct link to heading">​</a></h3><p>The DBSync team ran a big number of benchmarks and investigated ways to speedup syncing. A
+conservative number of these will be included in the next release and the rest can be found in
+<a href="https://github.com/orgs/input-output-hk/projects/52/views/7" target="_blank" rel="noopener noreferrer">performance view</a>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="migrations-and-resyncing">Migrations and resyncing<a class="hash-link" href="#migrations-and-resyncing" title="Direct link to heading">​</a></h3><p>The next release will be 13.1.0, it will enable a migration without the need to resync. It will also
+introduce a procedure that fixes bytes values of Datum and RedeemerData in existing databases
+<a href="https://github.com/input-output-hk/cardano-db-sync/pull/1294" target="_blank" rel="noopener noreferrer">#1294</a></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="release">Release<a class="hash-link" href="#release" title="Direct link to heading">​</a></h3><p>The release has been mostly cherry-picked from master
+<a href="https://github.com/input-output-hk/cardano-db-sync/pull/1294" target="_blank" rel="noopener noreferrer">#1294</a> and its scope can be seen
+<a href="https://github.com/orgs/input-output-hk/projects/52/views/6" target="_blank" rel="noopener noreferrer">release view</a></p>]]></content:encoded>
+            <category>db-sync</category>
+        </item>
+        <item>
             <title><![CDATA[Hydra Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-10-28-hydra</link>
             <guid>2022-10-28-hydra</guid>
