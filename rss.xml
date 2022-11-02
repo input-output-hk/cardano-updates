@@ -107,6 +107,15 @@ See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3108" targe
             <category>ledger</category>
         </item>
         <item>
+            <title><![CDATA[System Test Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-11-02-system-test</link>
+            <guid>2022-11-02-system-test</guid>
+            <pubDate>Wed, 02 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[System Test Update]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="system-test-update">System Test Update<a class="hash-link" href="#system-test-update" title="Direct link to heading">​</a></h2><p>We have been focused on:</p><ul><li>Fully opening our test results (on top of the existing tests &amp; tools):<br>See <a href="https://input-output-hk.github.io/cardano-node-tests/" target="_blank" rel="noopener noreferrer">cardano-node-tests webpage</a>.</li><li>Started to test and automate the new functionalities added in the <code>1.35.4-rc1</code> node tag<br>See <a href="https://github.com/input-output-hk/cardano-node-tests/blob/tag_test_1.35.4_rc1/src_docs/source/test_results/node/tag_1_35_4_rc1.rst" target="_blank" rel="noopener noreferrer">test results tracking page</a>.</li><li>Made some improvements to the automated db-sync sync tests<br>See <a href="https://github.com/input-output-hk/cardano-node-tests/tree/db_sync_tests/db_sync_tests" target="_blank" rel="noopener noreferrer">db-sync tests</a>.</li><li>Multiple cleanups and updates to the cardano-node-tests framework</li><li>Updated the nightly pipelines for the cardano-node-tests after the Babbage HF</li></ul>]]></content:encoded>
+            <category>system-test</category>
+        </item>
+        <item>
             <title><![CDATA[DB Sync Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-11-01-db-sync</link>
             <guid>2022-11-01-db-sync</guid>

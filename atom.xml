@@ -114,6 +114,19 @@ See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3108" targe
         <category label="ledger" term="ledger"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[System Test Team Update]]></title>
+        <id>2022-11-02-system-test</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-11-02-system-test"/>
+        <updated>2022-11-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[System Test Update]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="system-test-update">System Test Update<a class="hash-link" href="#system-test-update" title="Direct link to heading">​</a></h2><p>We have been focused on:</p><ul><li>Fully opening our test results (on top of the existing tests &amp; tools):<br>See <a href="https://input-output-hk.github.io/cardano-node-tests/" target="_blank" rel="noopener noreferrer">cardano-node-tests webpage</a>.</li><li>Started to test and automate the new functionalities added in the <code>1.35.4-rc1</code> node tag<br>See <a href="https://github.com/input-output-hk/cardano-node-tests/blob/tag_test_1.35.4_rc1/src_docs/source/test_results/node/tag_1_35_4_rc1.rst" target="_blank" rel="noopener noreferrer">test results tracking page</a>.</li><li>Made some improvements to the automated db-sync sync tests<br>See <a href="https://github.com/input-output-hk/cardano-node-tests/tree/db_sync_tests/db_sync_tests" target="_blank" rel="noopener noreferrer">db-sync tests</a>.</li><li>Multiple cleanups and updates to the cardano-node-tests framework</li><li>Updated the nightly pipelines for the cardano-node-tests after the Babbage HF</li></ul>]]></content>
+        <author>
+            <name>Dorin Solomon</name>
+            <uri>https://github.com/dorin100</uri>
+        </author>
+        <category label="system-test" term="system-test"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[DB Sync Team Update]]></title>
         <id>2022-11-01-db-sync</id>
         <link href="https://input-output-hk.github.io/cardano-updates/2022-11-01-db-sync"/>
