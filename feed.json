@@ -5,13 +5,19 @@
     "description": "Regular updates from Cardano Development Teams",
     "items": [
         {
-            "id": "/2022/10/28/hydra",
+            "id": "2022-10-28-hydra",
             "content_html": "<h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"high-level-summary\">High level summary<a class=\"hash-link\" href=\"#high-level-summary\" title=\"Direct link to heading\">​</a></h2><p>This week, the hydra team completed several user experience improvements to the\n<code>hydra-tui</code> and <code>hydra-node</code>, and delivered a first version of persisted head\nstates by publishing release version\n<a href=\"https://github.com/input-output-hk/hydra-poc/releases/tag/0.8.0\" target=\"_blank\" rel=\"noopener noreferrer\"><code>0.8.0</code></a>.\nBesides this, they met with researchers on topic of the HeadV1 specification and\nkicked-off work on the RFP for an external audit of the Hydra Head protocol and implementation.</p><h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"what-did-the-team-achieve-this-week\">What did the team achieve this week<a class=\"hash-link\" href=\"#what-did-the-team-achieve-this-week\" title=\"Direct link to heading\">​</a></h2><ul><li>Completed the UX improvements on the <code>hydra-tui</code></li><li>Released version <a href=\"https://github.com/input-output-hk/hydra-poc/releases/tag/0.8.0\" target=\"_blank\" rel=\"noopener noreferrer\"><code>0.8.0</code></a>, which delivers a first version of persisted head states</li><li>Met with researchers on the HeadV1 specification</li><li>Started work on the RFP for our external audit</li></ul><h2 class=\"anchor anchorWithStickyNavbar_LWe7\" id=\"what-are-the-goals-of-next-week\">What are the goals of next week<a class=\"hash-link\" href=\"#what-are-the-goals-of-next-week\" title=\"Direct link to heading\">​</a></h2><ul><li>Complete ADR18 implementation and get it merged</li><li>Start work on event-sourced persistence <a href=\"https://github.com/input-output-hk/hydra-poc/issues/580\" target=\"_blank\" rel=\"noopener noreferrer\">#580</a></li><li>Have a first plutus script gap closed <a href=\"https://github.com/input-output-hk/hydra-poc/issues/452\" target=\"_blank\" rel=\"noopener noreferrer\">#452</a></li><li>Revamp CI to use flakes and build macos artifacts (stretch goal: migrate to cicero for nix builds)</li></ul>",
-            "url": "https://input-output-hk.github.io/cardano-updates/2022/10/28/hydra",
-            "title": "hydra",
+            "url": "https://input-output-hk.github.io/cardano-updates/2022-10-28-hydra",
+            "title": "Hydra Team Update",
             "summary": "High level summary",
             "date_modified": "2022-10-28T00:00:00.000Z",
-            "tags": []
+            "author": {
+                "name": "Sebastian Nagel",
+                "url": "https://github.com/ch1bo"
+            },
+            "tags": [
+                "hydra"
+            ]
         },
         {
             "id": "2022-10-28-network",
