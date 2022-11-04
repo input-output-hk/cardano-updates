@@ -91,7 +91,7 @@ that the CS fragment tip is not progressing for significant periods
 ("plateaus").</p><p><img loading="lazy" src="/cardano-updates/assets/images/2022-11-02-csj-vs-baseline-sliced-77ff018af70191b4122b1e7cf56c79b8.svg" width="998" height="445" class="img_ev3q"></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="technical-debt">Technical debt<a class="hash-link" href="#technical-debt" title="Direct link to heading">​</a></h2><p>We <a href="https://github.com/input-output-hk/ouroboros-network/pull/4098" target="_blank" rel="noopener noreferrer">clarified</a> a
 common source of confusion around VRF tie-breaking and cross-era chain
 selection. This PR involved correcting potentially misleading names of
-VRF-related functions, and providing context for rhy a particular VRF value is
+VRF-related functions, and providing context for a particular VRF value is
 used for tie-breaking.</p>]]></content>
         <author>
             <name>Damian Nadales</name>
