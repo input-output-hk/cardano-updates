@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Cardano Development Updates Blog</title>
+        <link>https://input-output-hk.github.io/cardano-updates/quarterly</link>
+        <description>Cardano Development Updates Blog</description>
+        <lastBuildDate>Mon, 07 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Node API & CLI Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/quarterly/2022-10-07-node-cli-api</link>
+            <guid>2022-10-07-node-cli-api</guid>
+            <pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Node-Api-Cli Quarterly Update]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="node-api-cli-quarterly-update">Node-Api-Cli Quarterly Update<a class="hash-link" href="#node-api-cli-quarterly-update" title="Direct link to heading">​</a></h2><h2 class="anchor anchorWithStickyNavbar_LWe7" id="2022-09---2022-11-04">2022-09 - 2022-11-04<a class="hash-link" href="#2022-09---2022-11-04" title="Direct link to heading">​</a></h2><ul><li>Various improvements to tests/CI/GHC 9.2.4 preparations/upgrade to cabal-3.8.1.0</li><li>Major clean up of stale iusses + PRs.</li><li>Implementation of stale-bot to mitigate against a proliferation of outdated issues and PRs</li><li>cardano-api refactoring with the aim of exposing more user friendly functions, particularly concerning transaction construction and querying the node.</li><li>cardano-cli refactoring with the aim of moving reusable functions to cardano-api. We have made strides here and have managed to improve the interface of transaction construction and validation.</li><li>General documentation updates and improvements</li><li>Addition of tx-mempool command which allows users to:<ul><li>Query the node about the current mempool's capacity and sizes</li><li>Request the next transaction from the mempool's current list</li><li>Query if a particular transaction exists in the mempool</li></ul></li><li>Initial refactoring of cardano-testnet</li></ul><p>Next quarter</p><ul><li>cardano-api<ul><li>Working with Konstantinos and his team to make cardano-api better for dapp developers - we have a google doc for this, I can send it to you privately.</li></ul></li><li>cardano-testnet<ul><li>Working with Marc Fontaine to create an easy to use executable to deploy testnets locally - <a href="https://github.com/input-output-hk/cardano-node/issues/4598" target="_blank" rel="noopener noreferrer">https://github.com/input-output-hk/cardano-node/issues/4598</a></li></ul></li><li>Serenity<ul><li>Continued refactoring of cardano-api and cardano-cli, with the particular focus on extracting re-usable components of cardano-cli and moving them to cardano-api. This is harder to define but will manifest in stuff moving from cardano-cli to cardano-api and is tied in to the cardano-api work specified above.</li></ul></li><li>General bug fixing and smaller feature requests for the api/cli that are always coming in. Robert is primarily handling this at the moment as he is relatively new.</li></ul>]]></content:encoded>
+            <category>cli-api-quarterly</category>
+        </item>
+    </channel>
+</rss>

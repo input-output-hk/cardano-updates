@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[7363],{3901:a=>{a.exports=JSON.parse('{"permalink":"/cardano-updates/quarterly/tags/cli-api-quarterly","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
