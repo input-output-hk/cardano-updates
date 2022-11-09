@@ -2,11 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/quarterly</id>
     <title>Cardano Development Updates Blog</title>
-    <updated>2022-11-07T00:00:00.000Z</updated>
+    <updated>2022-11-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/quarterly"/>
     <subtitle>Cardano Development Updates Blog</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Network Team Update]]></title>
+        <id>2022-11-09-network</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/quarterly/2022-11-09-network"/>
+        <updated>2022-11-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Network Quarterly Update]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="network-quarterly-update">Network Quarterly Update<a class="hash-link" href="#network-quarterly-update" title="Direct link to heading">​</a></h2><h2 class="anchor anchorWithStickyNavbar_LWe7" id="2022-09---2022-11">2022-09 - 2022-11<a class="hash-link" href="#2022-09---2022-11" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary-of-most-important-improvements">Summary of most important improvements<a class="hash-link" href="#summary-of-most-important-improvements" title="Direct link to heading">​</a></h3><p>During this quarter the networking team delivered low level specification of
+peer sharing &amp; eclipse evasion.  We held a session with the consensus &amp; the
+scientists; we got a positive feedback on the design.</p><p>Further we focused on implementation of peer sharing.  We produced a <a href="https://github.com/input-output-hk/ouroboros-network/wiki/Peer-Sharing-Implementation-Plan" target="_blank" rel="noopener noreferrer">detail
+design</a> and an <a href="https://github.com/input-output-hk/ouroboros-network/pull/4019" target="_blank" rel="noopener noreferrer">early implementation</a>.</p><p>We prepared the <em>P2P Single Relay Release</em> (<code>cardano-node-1.35.5</code>).  It
+includes over <a href="https://github.com/input-output-hk/ouroboros-network/pull/4120" target="_blank" rel="noopener noreferrer">130 patches</a> of network stack improvements over the
+previous version <code>1.35.4</code>, which were accomplished over a longer period of
+time.  Among them are both bug fixes and UX improvements for stake pool
+operators like simplified format of the <a href="https://github.com/input-output-hk/cardano-node/pull/4563" target="_blank" rel="noopener noreferrer">topology file</a>, or
+improvements in the logged messages:</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4015" target="_blank" rel="noopener noreferrer">tracing of early consensus exceptions</a></li><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4127" target="_blank" rel="noopener noreferrer">tracing of demotion of local root peers</a> (traced with
+<code>Warning</code> severity), the trace is called <code>TraceDemoteLocalAsynchronous</code>, in
+<code>json</code> format it is encoded as <code>DemoteLocalAsynchronous</code>.  For an SPO
+tracking these demotion is vital (such demotion could indicate that a block
+producer is no longer connected to its relays or vice versa)</li></ul><p>We also provide better integration with <a href="https://github.com/input-output-hk/ouroboros-network/pull/3979" target="_blank" rel="noopener noreferrer">systemd</a> (socket
+activation improvements) or improvements in the networking stack:</p><ul><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/3785" target="_blank" rel="noopener noreferrer">exit policies</a>,</li><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/3915" target="_blank" rel="noopener noreferrer">peer metrics improvements</a>,</li><li><a href="https://github.com/input-output-hk/ouroboros-network/pull/4106" target="_blank" rel="noopener noreferrer">DNS TTL</a> improvements (which make it harder to misconfigure the
+system, an issue discovered by the performance &amp; monitoring team),</li><li>do not trigger inbound idle timeout for <code>node-to-client</code> connections (<a href="https://github.com/input-output-hk/ouroboros-network/pull/3844" target="_blank" rel="noopener noreferrer">pr
+#3844</a>), an issue reported to us by Matthias Benkort from
+Cardano Foundation.</li></ul><p>Duncan has been making progress with the input endorsers demo. His simulation
+provides a useful animated visualisation and live quantification of behaviour
+of the modeled design.</p><p>We also improved our e2e diffusion simulation by implementing header-body
+split, similar to what the real implementation does.</p><p>We also made some advances towards our future goals of P2P release for block
+producer nodes (<a href="https://github.com/input-output-hk/ouroboros-network/pull/3800" target="_blank" rel="noopener noreferrer">pr #3800</a> - in review) &amp; for Daedalus users
+(<a href="https://github.com/input-output-hk/ouroboros-network/issues/3968" target="_blank" rel="noopener noreferrer">pr #3690</a> - merged).</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="detailed-log">Detailed log<a class="hash-link" href="#detailed-log" title="Direct link to heading">​</a></h3><ul><li><p>We expanded diffusion simulation with block-fetch protocol bringing it closer
+to the production system.</p></li><li><p>We addressed some additional technical depth in diffusion simulation</p></li><li><p>We slightly improved documentation &amp; CI of io-sim and typed-protocols
+repositories for open-source contributors.</p></li><li><p>We closed a number of issues towards publishing io-sim on Hackage (only two
+essential issues are left open).</p></li><li><p>We pushed a branch of typed-protocols which captures one of the developer UX
+problems in the API which we need to solve.</p></li><li><p>We identified and fixed an issue related to systemd sockets.</p></li><li><p>We identified and fixed an issue in consensus initialisation not giving
+feedback on early errors.</p></li><li><p>We deployed RT View, identified a number of issues which were communicated to
+the performance &amp; monitoring team.</p></li><li><p>We finished high level &amp; detailed design of peer sharing, very early
+implementation of peer sharing is done (note that peer sharing cannot be
+safely deployed without eclipse evasion &amp; genesis).</p></li><li><p>We finished high level design of eclipse evasion, and started working on
+a detailed design.</p></li><li><p>We were assigned the role of release engineer for 1.35.5 release (the P2P
+single relay release); we prepared a cardano-node for 1.35.5 release which
+contains more than 130 patches of just network stack improvements done over
+last few months.</p></li><li><p>We diagnosed and fixed an tricky bug in the peer state actions (a component
+which sits between outbound governor and connection manager). That bug was
+introduced earlier this year and never released. It was caught by the QA
+testing framework. We expanded our diffusion simulation to cover such case and
+also mitigated a chance for reintroducing such a bug in future.</p></li><li><p>We identified and quite likely mitigated a misconfiguration in the
+benchmarking cluster (next benchmarking run will confirm our hypothesis).</p></li><li><p>We simplified the format of p2p topology file, we got positive feedback from
+SPOs.</p></li><li><p>We raised severities of some of the logging messages, which is an important
+improvement for SPOs, exchanges and other users of the system.</p></li><li><p>We worked on input endorsers simulation which gives both animated and
+quantified live feedback on network operation, using a simplified model of
+a TCP/IP network. </p></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-quarter">Next quarter<a class="hash-link" href="#next-quarter" title="Direct link to heading">​</a></h2><ul><li><p>Release the Single Relay P2P Release <code>1.35.5</code>.</p></li><li><p>Carry on with Peer Sharing (review, testing).</p></li><li><p>Deliver a talk at <a href="https://sites.uclouvain.be/OPODIS2022/" target="_blank" rel="noopener noreferrer">Conference on Principles of Distributed Systems 2022</a> in Brussels, Belgium.</p></li><li><p>Present Detailed Design of Eclipse Evasion and start implementation phase.</p></li><li><p>Work on P2P Block Producer release.</p></li><li><p>Carry on with publishing of <code>io-sim</code> on <code>Hackage</code>.</p></li></ul>]]></content>
+        <author>
+            <name>Marcin Szamotulski</name>
+            <uri>https://github.com/coot</uri>
+        </author>
+        <category label="network" term="network"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Node API & CLI Team Update]]></title>
         <id>2022-10-07-node-cli-api</id>
