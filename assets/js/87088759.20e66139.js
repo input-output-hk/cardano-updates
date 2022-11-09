@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[47],{2425:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Network Team Update","permalink":"/cardano-updates/quarterly/2022-11-09-network"},{"title":"Node API & CLI Team Update","permalink":"/cardano-updates/quarterly/2022-10-07-node-cli-api"}]}')}}]);
