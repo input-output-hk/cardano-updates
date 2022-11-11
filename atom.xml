@@ -2,11 +2,56 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-11-04T00:00:00.000Z</updated>
+    <updated>2022-11-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Ledger Team Update]]></title>
+        <id>2022-11-11-ledger</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-11-11-ledger"/>
+        <updated>2022-11-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>I am extremely excited to say that we now have a pull request up which introduces our new versioned
+CBOR serialization. This was an enormous effort, but it will solve a host of problems that we have
+had since the Shelley phase. It will take time to properly review it, and we will
+need to put in a lot of effort to integrate it with the downstream components, but this is  a huge
+milestone. Additionally, we have a new CIP proposing a deprecation cycle for the transaction
+serialization schemes.</p><p>We also have a draft pull request that reworks how deposits are tracked. Users of the system will
+not notice any difference, but it is a necessary change needed to prepare the way for
+decentralizing the governance of Cardano.</p><p>Finally, we continued to address technical debt. In particular, we continued to make progress on
+bringing coherency and consistency to the code base with a common naming convention, and
+improving some error messages.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><ul><li>We have a pull request up for our new versioned CBOR serialization.
+When we encounter a problem with our deserializers, it can be very difficult to implement a fix.
+It is difficult because we can only fix such issues during a hard fork, and leading up to the
+hard fork we must maintain two serializations for the same type in order to not cause unintended
+network splitting (the problematic version must be used before the hard fork,
+and the fixed version is used afterwards).
+This can be especially tricky with the <code>FromCBOR</code> typeclass, since it is not always easy to
+search for where all the problematic uses are located.
+The new versioned CBOR serialization allows us to gracefully handle this transition.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3138" target="_blank" rel="noopener noreferrer">pull-3138</a>].</li><li>We proposed a CIP for backwards compatibility of the transaction serialization schemes.
+See [<a href="https://github.com/cardano-foundation/CIPs/pull/372" target="_blank" rel="noopener noreferrer">pull-372</a>].</li><li>We have draft for the new deposit tracking.
+This draft is not as memory efficient as the final version will be,
+but it is a sufficient proof of concept that we can write property tests against, ensuring
+that we have not changed the semantics.
+We will optimize after we are sure of the correctness.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3127" target="_blank" rel="noopener noreferrer">pull-3127</a>].</li><li>We now provide better support for debugging failed Plutus scripts in an important helper
+function, named <code>evaluateTransactionExecutionUnits</code>.
+In particular, it now returns all the information needed to rerun the script with exactly the
+same arguments. This feature will end up appearing in the CLI and other tools from the Plutus
+tools team.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3135" target="_blank" rel="noopener noreferrer">pull-3135</a>].</li><li>We did a lot more renaming to bring coherency and consistency to the code base.
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3126" target="_blank" rel="noopener noreferrer">pull-3126</a>], [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3120" target="_blank" rel="noopener noreferrer">pull-3120</a>], [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3118" target="_blank" rel="noopener noreferrer">pull-3118</a>], and [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3116" target="_blank" rel="noopener noreferrer">pull-3116</a>].</li><li>We have added a few things to the ledger repository to make it conform to the
+<a href="https://input-output-hk.github.io/cardano-engineering-handbook/" target="_blank" rel="noopener noreferrer">Cardano Engineering Handbook</a>
+See [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3139" target="_blank" rel="noopener noreferrer">pull-3139</a>].</li></ul>]]></content>
+        <author>
+            <name>Jared Corduan</name>
+            <uri>https://github.com/JaredCorduan</uri>
+        </author>
+        <category label="ledger" term="ledger"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hydra Team Update]]></title>
         <id>2022-11-04-hydra</id>
