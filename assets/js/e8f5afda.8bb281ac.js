@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[5540],{8990:a=>{a.exports=JSON.parse('{"label":"ledger","permalink":"/cardano-updates/tags/ledger","allTagsPath":"/cardano-updates/tags","count":7}')}}]);

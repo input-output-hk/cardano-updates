@@ -4,10 +4,45 @@
         <title>Cardano Updates Feed</title>
         <link>https://input-output-hk.github.io/cardano-updates/</link>
         <description>Regular updates from Cardano Development Teams</description>
-        <lastBuildDate>Fri, 18 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Ledger Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-11-23-ledger</link>
+            <guid>2022-11-23-ledger</guid>
+            <pubDate>Wed, 23 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>We released <a href="https://github.com/cardano-foundation/CIPs/pull/380" target="_blank" rel="noopener noreferrer">CIP-1694</a>,
+our proposal for entering the <a href="https://roadmap.cardano.org/en/voltaire/" target="_blank" rel="noopener noreferrer">Voltaire phase</a>.
+<strong>Please come join the discussion</strong>, this will be an incredibly exciting transition for
+Cardano and we want everyone to participate!</p><p>We now have a sensible way to version all of the serialization schemes used in the ledger.
+The draft pull request was polished, reviewed, and merged this week.
+This solves many problems that have vexed us since the beginning of the Shelley ledger era.</p><p>Everyone working on the Cardano node is working together to improve our release process,
+and the ledger team in particular dedicated one engineer to help with these efforts
+for the next release.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-conway-ledger-era">The Conway ledger era<a class="hash-link" href="#the-conway-ledger-era" title="Direct link to heading">​</a></h3><p>The current proposal in <a href="https://github.com/cardano-foundation/CIPs/pull/380" target="_blank" rel="noopener noreferrer">CIP-1694</a> encompasses two new ledger eras.
+The first era will be called Conway, after the English mathematician John Horton Conway.
+The community facing aspects of the Conway ledger era will be very minimal,
+but it will pave the way for introducing liquid democracy.
+The details can be viewed <a href="https://github.com/input-output-hk/cardano-ledger/projects/4" target="_blank" rel="noopener noreferrer">here</a>.
+We do not yet have a formal specification for the Conway era.
+Our plan is to debut the
+<a href="https://github.com/input-output-hk/formal-ledger-specifications" target="_blank" rel="noopener noreferrer">formal ledger model</a>.
+Briefly, the Conway ledger era will:</p><ul><li>introduce SPO voting for hard forks (in the spirit of the now abandoned <a href="https://github.com/cardano-foundation/CIPs/pull/318" target="_blank" rel="noopener noreferrer">CIP-47</a>)</li><li>provide an on-chain mechanism for rotating the governance keys</li><li>re-plumb the ledger rules involving governance to be in line with <a href="https://github.com/cardano-foundation/CIPs/pull/380" target="_blank" rel="noopener noreferrer">CIP-1694</a></li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="versioned-cbor">Versioned CBOR<a class="hash-link" href="#versioned-cbor" title="Direct link to heading">​</a></h3><p>We now have the ability to easily tie our serialization schemes to the Cardano
+major protocol version.
+We still aim to preserve backwards compatibility as much as possible, but we now have a principled
+plan for resolving problems (see <a href="https://github.com/cardano-foundation/CIPs/pull/372" target="_blank" rel="noopener noreferrer">CIP-ledger-cbor</a>).
+In particular, we can now address several long standing issues, such as
+<a href="https://github.com/input-output-hk/cardano-ledger/issues/2444" target="_blank" rel="noopener noreferrer">issue-2444</a>, <a href="https://github.com/input-output-hk/cardano-ledger/issues/2965" target="_blank" rel="noopener noreferrer">issue-2965</a>, and <a href="https://github.com/input-output-hk/cardano-ledger/issues/3003" target="_blank" rel="noopener noreferrer">issue-3003</a>. </p><p>The final (and massive!) pull request which brought us the versioning is <a href="https://github.com/input-output-hk/cardano-ledger/pull/3138" target="_blank" rel="noopener noreferrer">pull-3138</a>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="deposit-tracking">Deposit tracking<a class="hash-link" href="#deposit-tracking" title="Direct link to heading">​</a></h3><p>The draft pull request which was exploring how best to track individual deposits
+is much closer now to being ready to take out of draft (<a href="https://github.com/input-output-hk/cardano-ledger/pull/3127" target="_blank" rel="noopener noreferrer">pull-3127</a>).
+For background on the issue, see <a href="https://github.com/input-output-hk/cardano-ledger/issues/3113" target="_blank" rel="noopener noreferrer">issue-3113</a>.
+This is quite an invasive change which effects many of our tests, which we are now addressing.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="technical-debt">Technical debt<a class="hash-link" href="#technical-debt" title="Direct link to heading">​</a></h3><p>As always, we keep working on technical debt.
+We have deduplicated a some things: <a href="https://github.com/input-output-hk/cardano-ledger/pull/3129" target="_blank" rel="noopener noreferrer">pull-3129</a>, <a href="https://github.com/input-output-hk/cardano-ledger/pull/3162" target="_blank" rel="noopener noreferrer">pull-3162</a>.
+We have memoized a problematic computation (though more due diligence is needed before we can
+merge): <a href="https://github.com/input-output-hk/cardano-ledger/pull/3141" target="_blank" rel="noopener noreferrer">pull-3141</a>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="node-release">Node release<a class="hash-link" href="#node-release" title="Direct link to heading">​</a></h3><p>We have been helping with the node release efforts. See <a href="https://github.com/input-output-hk/cardano-node/pull/4608" target="_blank" rel="noopener noreferrer">pull-4608</a>.</p>]]></content:encoded>
+            <category>ledger</category>
+        </item>
         <item>
             <title><![CDATA[Hydra Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-11-18-hydra</link>
