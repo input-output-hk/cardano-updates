@@ -27,6 +27,15 @@
             <category>performance-tracing</category>
         </item>
         <item>
+            <title><![CDATA[Crypto Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-11-11-crypto</link>
+            <guid>2022-11-11-crypto</guid>
+            <pubDate>Fri, 11 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level overview]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-overview">High level overview<a class="hash-link" href="#high-level-overview" title="Direct link to heading">​</a></h2><p>The SECP primitives AC has been met, and the test-vectors <a href="https://github.com/input-output-hk/cardano-base/pull/320" target="_blank" rel="noopener noreferrer">PR</a> has been merged. Another of the main short-term goals is to implement KES secure forgetting. In the past week the mempool <a href="https://github.com/input-output-hk/cardano-base/pull/336" target="_blank" rel="noopener noreferrer">PR</a> has been merged, and we've adapted the KES secure <a href="https://github.com/input-output-hk/cardano-base/pull/255" target="_blank" rel="noopener noreferrer">PR</a> to the new mempool design. On top of this, we are working in updating the VRF batch compat version to use the audited version of the libsodium fork (<a href="https://github.com/input-output-hk/cardano-base/pull/341" target="_blank" rel="noopener noreferrer">PR#</a>). Finally, we've 'cleaned' our libsodium fork, and we directly fork upstream, rather than forking Algorand's fork. </p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="low-level-overview">Low level overview<a class="hash-link" href="#low-level-overview" title="Direct link to heading">​</a></h2><ul><li>With the AC met, there was no more blockers from crypto to release the node tag with the SECP primitives. We are now working closely with dQuadrant to to implement some E2E tests with an actual bridge implementation.  </li><li>We previously had a C implementation of a memory pool for usage in KES secure forgetting. After a discussion with Alexey, we decided to use his implementation of a mempool in Haskell. We are working in adapting KES Secure forgetting to use this Haskell mempool. </li><li>In parallel, we keep progressing on the <a href="https://github.com/input-output-hk/kes-agent" target="_blank" rel="noopener noreferrer">KES agent</a></li><li>VRFBatchCompat was deactivated due to a lack of an external audit. This audit was finished a few weeks back, and we are updating cardano base to use this new librar. In particular, this library implements the latest changing version of the VRF draft (13, which seems to remain stable), and links to the libsodium fork which implements batch verification. </li><li>Our libsodium fork now links directly to upstream libsodium.</li></ul>]]></content:encoded>
+            <category>crypto</category>
+        </item>
+        <item>
             <title><![CDATA[Hydra Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-11-11-hydra</link>
             <guid>2022-11-11-hydra</guid>
