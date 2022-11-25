@@ -4,10 +4,19 @@
         <title>Cardano Updates Feed</title>
         <link>https://input-output-hk.github.io/cardano-updates/</link>
         <description>Regular updates from Cardano Development Teams</description>
-        <lastBuildDate>Wed, 23 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 25 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Hydra Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-11-25-hydra</link>
+            <guid>2022-11-25-hydra</guid>
+            <pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High-level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High-level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>This week, the Hydra team attended the Cardano Summit in Lausanne, where Sebastian gave a <a href="https://summit.cardano.org/agenda-day-2/cardano-ballot-speaker-winner-presentation-6/" target="_blank" rel="noopener noreferrer">presentation</a> about Hydra and the whole team connected with the Cardano Community. After the public event, th Hydra team also conducted a workshop, which provided room for a retrospective, various planning sessions and they hacked together on different ideas.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-did-the-team-achieve-this-week">What did the team achieve this week<a class="hash-link" href="#what-did-the-team-achieve-this-week" title="Direct link to heading">​</a></h2><ul><li>Attended the Cardano Summit in Lausanne. Hydra was topic of one talk: <a href="https://summit.cardano.org/agenda-day-2/cardano-ballot-speaker-winner-presentation-6/" target="_blank" rel="noopener noreferrer">https://summit.cardano.org/agenda-day-2/cardano-ballot-speaker-winner-presentation-6/</a></li><li>Had a team workshop / hackathon after the summit:<ul><li>Retrospective</li><li>Impact mapping session</li><li>Hacked on smaller things</li></ul></li><li>Got a PR for tullia/cicero things by @kdermetfan</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-the-goals-of-next-week">What are the goals of next week<a class="hash-link" href="#what-are-the-goals-of-next-week" title="Direct link to heading">​</a></h2><ul><li>Monthly report &amp; review meeting</li><li>Tie up several loose ends / branches.</li><li>Resolve Tx validity discussions &amp; PRs.</li><li>Review cicero PR &amp; try it out.</li></ul>]]></content:encoded>
+            <category>hydra</category>
+        </item>
         <item>
             <title><![CDATA[Ledger Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-11-23-ledger</link>
