@@ -140,6 +140,79 @@ merge): <a href="https://github.com/input-output-hk/cardano-ledger/pull/3141" ta
         <category label="mithril" term="mithril"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Consensus Team Update]]></title>
+        <id>2022-11-16-consensus</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-11-16-consensus"/>
+        <updated>2022-11-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High-level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High-level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>During the past two weeks, the consensus team started documenting the
+implementation of the UTxO HD feature and continued developing tests for it. As
+part of our work on UTxO HD, we improved the Haskell support for LMDB. We also
+spent time working on the LSM tree prototype, and designed a parameter tuning
+algorithm for it. Regarding our work on Genesis, our investigation of the
+"plateaus" pointed at the <code>TICKF</code> slowdown on era boundaries as culprit. This
+led us to developing a caching strategy that will not only remove the
+aforementioned "plateaus", but can help alleviating the growing block production
+delay on epoch switch. We also helped reviewing the block forge credential
+hotswap feature, which is intended for use in the adoption of P2P.</p><p>We also worked on paying technical debt and fostering collaboration. In
+particular, we improved the <code>io-sim</code> framework, which is crucial for testing and
+simulating Cardano components. We also removed thunks that appeared on era
+translations, and improved our diffusion pipelining feature. We are working on a
+presentation for explaining Praos and Genesis.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-status-report">High-level status report<a class="hash-link" href="#high-level-status-report" title="Direct link to heading">​</a></h2><ul><li>Finish the UTxO HD prototype: in progress.<ul><li>We added documentation for this feature.</li><li>We developed the second version of the mempool tests.</li><li>We fixed benchmarks that were inflating the speedup we observed in the
+anti-diff implementation of sequences of differences. Speedups are now in the
+range of <!-- -->[3.33, 4.75]<!-- -->, which remain significant.</li><li>We continued improving Haskell LMDB support.</li><li>We finished implementing a "parameter tuning algorithm" for the LSM tree
+prototype. This enables us to run experiments to check the correctness of
+the algorithm.</li></ul></li><li>Genesis: in progress.<ul><li>Work investigating the "plateaus" in the <code>ChainSync</code> jumping prototype
+pointed to the <code>TICKF</code> slowdown on era boundaries as culprit.</li></ul></li><li>Tech debt:<ul><li>We improved the capabilities of our <code>io-sim</code> library, which is crucial for
+testing and simulating Cardano components.</li><li>We removed thunks from epoch translations in the ledger.</li><li>We added Linux CI support for <code>lmdb-simple</code>.</li><li>We got pending diffusion pipelining improvements merged.</li></ul></li><li>Fostering collaboration:<ul><li>We are working on a explanation of Praos and Genesis protocols.</li></ul></li><li>Support:<ul><li>Investigation of CSJ "plateaus" led us to developing a caching strategy for
+<code>TICKF</code> that will not only remove these "plateaus", but can help alleviating
+the growing block production delay on epoch switch.</li><li>We reviewed the block forge credential hotswapping feature which is intended
+for use in the adoption of P2P.</li></ul></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="workstreams">Workstreams<a class="hash-link" href="#workstreams" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="finish-the-utxo-hd-prototype">Finish the UTxO HD prototype<a class="hash-link" href="#finish-the-utxo-hd-prototype" title="Direct link to heading">​</a></h3><p>We merged PR <a href="https://github.com/input-output-hk/ouroboros-network/pull/4060" target="_blank" rel="noopener noreferrer">#4060</a>, which adds a report documenting the UTxO HD
+feature, and puts emphasis in explaining how the mempool works in combination
+with UTxO HD.</p><p>We opened a draft PR with the second iteration of the property tests for the
+mempool (<a href="https://github.com/input-output-hk/ouroboros-network/pull/4076" target="_blank" rel="noopener noreferrer">#4076</a>).</p><p>We fixed the <code>Arbitrary</code> instances for keys and values in <code>DiffSeq</code> benchmarks
+(<a href="https://github.com/input-output-hk/ouroboros-network/pull/4143" target="_blank" rel="noopener noreferrer">#4143</a>). The problem was that we were testing with mostly small
+values, which artificially boosted the performance gains we saw on benhcmarks.
+Speedups are now in the range of <!-- -->[3.33, 4.75]<!-- --> across the different
+configurations.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="backing-store-property-tests">Backing store property tests<a class="hash-link" href="#backing-store-property-tests" title="Direct link to heading">​</a></h4><p>We focused on incorporating feedback on the monadic cursor API PR (<a href="https://github.com/input-output-hk/lmdb-simple/pull/1" target="_blank" rel="noopener noreferrer">#1</a>).
+This required us to make small tweaks to <code>quickcheck-lockstep</code> to test the new
+API. We also updated the backing store property tests to use the new version of
+the monadic cursor API.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="lsm-tree-implementation">LSM tree implementation<a class="hash-link" href="#lsm-tree-implementation" title="Direct link to heading">​</a></h3><p>We worked on the LSM tree prototype. In particular: finished implementing a
+"parameter tuning algorithm" that adapts the LSM tree design based on factors
+like:</p><ul><li>workload</li><li>machine specs, </li><li>and characteristics of the data being stored. </li></ul><p>We are now running experiments to gather results and cross-reference them with
+existing experimental results from the LSM tree paper to see if the algorithm is
+working correctly.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="benchmarking-the-csj-prototype">Benchmarking the CSJ prototype<a class="hash-link" href="#benchmarking-the-csj-prototype" title="Direct link to heading">​</a></h3><p>We focused on investigating the "plateaus" in the <code>ChainSync</code> tip, which turned
+out to be due to the <code>TICKF</code> bug which we previously were only aware of in the
+context of the long forging times near epoch boundaries. For the most drastic
+patch by @nfrisby to speed up <code>TICKF</code>, full sync is speeding up by 7%.</p><p>The following plot shows that by caching the <code>TICKF</code> the <code>ChainSync</code> tip and the
+<code>VolatileDB</code> tip progress at the same rate.</p><p><img loading="lazy" src="/cardano-updates/assets/images/2022-11-16-removed-stuttering-e49aa27a0e549f0195373203da971ba7.png" width="765" height="445" class="img_ev3q"></p><p>The plot below shows the speedup observed by caching the <code>TICKF</code> rule wrt the
+baseline.</p><p><img loading="lazy" src="/cardano-updates/assets/images/2022-11-16-comparing-TICKF-batch-c6570a71c4a5d53b10cb7309d2cc742c.png" width="773" height="445" class="img_ev3q"></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="technical-debt">Technical debt<a class="hash-link" href="#technical-debt" title="Direct link to heading">​</a></h3><p>After addressing the PR comments, we merged PR <a href="https://github.com/input-output-hk/io-sim/pull/16" target="_blank" rel="noopener noreferrer">#16</a>, which implements
+the <code>MonadCatch</code> instance for <code>STM</code>. This extends the capability of our <code>io-sim</code>
+library, which is crucial for testing and simulating Cardano components PR #16
+closed <a href="https://github.com/input-output-hk/ouroboros-network/issues/1461" target="_blank" rel="noopener noreferrer">#1461</a>. This new feature was published as version <code>0.4.0.0</code>
+of <code>io-sim</code>.</p><p>We continued with our work fixing the <code>NoThunk</code> errors required for enabling
+nightly tests, with the help of <code>TVarInvariant</code> checks in <code>strict-stm</code> and
+<code>nothunks</code> libraries. We proposed fixes in <code>cardano-ledger</code> that took care of
+thunks that appeared in era translations (<a href="https://github.com/input-output-hk/cardano-ledger/pull/3143" target="_blank" rel="noopener noreferrer">#3143</a>). The fixes will be
+integrated back into consensus when <code>cardano-ledger</code> approves and publish the
+changes introduced in <code>#3143</code>.</p><p>We added CI support for <code>lmdb-simple</code> (<a href="https://github.com/input-output-hk/lmdb-simple/pull/2" target="_blank" rel="noopener noreferrer">#2</a>). We currently test the build on
+a Linux environment only.</p><p>We got pending diffusion pipelining PRs (<a href="https://github.com/input-output-hk/ouroboros-network/pull/3857" target="_blank" rel="noopener noreferrer">#3857</a>, <a href="https://github.com/input-output-hk/ouroboros-network/pull/3860" target="_blank" rel="noopener noreferrer">#3860</a>,
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/3856" target="_blank" rel="noopener noreferrer">#3856</a>) merged, after rebasing and addressing feedback.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="fostering-collaboration">Fostering collaboration<a class="hash-link" href="#fostering-collaboration" title="Direct link to heading">​</a></h3><p>@nfrisby finished a visualisation tool and outlined scripts for the Praos and
+Genesis explanation presentations. The idea is to produce a video that gives an
+overview of these protocols.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="support">Support<a class="hash-link" href="#support" title="Direct link to heading">​</a></h3><p>We started working on caching the computation of the <code>TICKF</code> rule
+(<a href="https://github.com/input-output-hk/ouroboros-network/issues/4054" target="_blank" rel="noopener noreferrer">#4054</a>), since this was blocking our benchmarking work for
+Genesis. In addition, this issue has the Cardano community <a href="https://github.com/input-output-hk/cardano-node/issues/4421" target="_blank" rel="noopener noreferrer">quite
+concerned</a>, so we are hoping the work done in caching the
+computation of the <code>TICKF</code> rule can help alleviating the growing block
+production delay on epoch switch.</p><p>We reviewed the block forge credential hotswapping PR <a href="https://github.com/input-output-hk/ouroboros-network/pull/3800" target="_blank" rel="noopener noreferrer">#3800</a> from the
+networking team, which is intended for use in the adoption of P2P.</p>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Performance & tracing update]]></title>
         <id>2022-11-16-performance-and-tracing</id>
         <link href="https://input-output-hk.github.io/cardano-updates/2022-11-16-performance-and-tracing"/>
