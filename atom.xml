@@ -2,11 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-11-30T00:00:00.000Z</updated>
+    <updated>2022-12-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[DB sync Team Update]]></title>
+        <id>2022-12-01-db-sync</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-12-01-db-sync"/>
+        <updated>2022-12-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>The DB Sync team prepared a release <code>13.1.0.0-rc2</code> which includes many improvements for db-sync,
+it makes rollbacks and syncing much faster, simplifies the schema, fixes bugs and introduces
+migrations. This release finalises the objectives that were set for db-sync for the previous
+3 months period and part of the syncing speed objective set for the next period
+<a href="https://github.com/input-output-hk/cardano-db-sync/blob/3640e5aa00b8bada61e5d4b6eee063749866711b/cardano-db-sync/CHANGELOG.md#13100" target="_blank" rel="noopener noreferrer">Changelog</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><ul><li><p>Branch <a href="https://github.com/input-output-hk/cardano-db-sync/compare/release/13.0.x..3640e5aa00b8bada61e5d4b6eee063749866711b" target="_blank" rel="noopener noreferrer">release/13.1.0.x</a>
+includes all the improvements related to the release. The release is passing through the testing
+phase and a number of bugs and issues have been fixed, like
+<a href="https://github.com/input-output-hk/cardano-db-sync/issues/1312" target="_blank" rel="noopener noreferrer">#1312</a>
+<a href="https://github.com/input-output-hk/cardano-db-sync/issues/1311" target="_blank" rel="noopener noreferrer">#1311</a>.
+Also many new unit tests have been added.</p></li><li><p>Part of the release branch is cherry-picked back into master, in a way that it respects the new
+release and development process, so that it takes into account migrations
+<a href="https://github.com/input-output-hk/cardano-db-sync/issues/1305" target="_blank" rel="noopener noreferrer">release process</a></p></li><li><p>The DB Sync team has also tagged release <code>13.0.6</code> which better supports preview and preprod for
+docker.</p></li></ul>]]></content>
+        <author>
+            <name>Kostas Dermentzis</name>
+            <uri>https://github.com/kderme</uri>
+        </author>
+        <category label="db-sync" term="db-sync"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Consensus Team Update]]></title>
         <id>2022-11-30-consensus</id>
