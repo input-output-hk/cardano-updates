@@ -2,11 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-11-28T00:00:00.000Z</updated>
+    <updated>2022-11-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Performance & tracing update]]></title>
+        <id>2022-11-30-performance-and-tracing</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-11-30-performance-and-tracing"/>
+        <updated>2022-11-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><ol><li>Benchmarks for the 1.36 first pre-release bump of the internal components have been delivered, and data shows the component bump is clear for release.</li><li>SECP benchmarking enablement is underway:  the necessary generator features have been implemented, and are now being integrated into the workbench.</li><li>The new tracing system:  in response to the performance regression we previously discovered we are working on pre-planned implementation improvements, and doing more benchmarks.</li><li>Infrastructure:  the Nomad-based workbench backend has been made closer to a cloud deployment scenario.  Cleanup in preparation for Cicero CI/CD integration started.</li><li>Open sourcing:  ongoing SRE collaboration on production deployment of performance data publishing.</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="performance">Performance<a class="hash-link" href="#performance" title="Direct link to heading">​</a></h2><p>We have ran benchmarks for the first component bump of the upcoming 1.36 release, and we don't see any significant performance changes.  The component bumps are therefore clear for release.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="tracing">Tracing<a class="hash-link" href="#tracing" title="Direct link to heading">​</a></h2><p>For the tracing system regression that we spotted -- even before, we already had plans for further efficiency improvement, and now we are actively pursuing them.
+The idea is to collect more statically-available information to enable shifting of more tracing decisions from message delivery time to configuration time.</p><p>To support this effort, we also started running more benchmarks and enhanced data analysis with relevant metrics.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="infrastructure">Infrastructure<a class="hash-link" href="#infrastructure" title="Direct link to heading">​</a></h2><p>Generation support for Plutus V2 has been implemented and so, with the help of the previously made looped signature-verifying script, the generator is now capable of producing two SECP workloads: verifying either ECDSA or Schnorr signatures.  This is now being integrated into the infrastructure -- the generator parametrisation API is being enhanced and the workbench is being extended to handle the new parametrisation.</p><p>In addition the workbench is now being enhanced to handle protocol-version-based choices for the Plutus cost model.</p><p>The intermediate cloud compatibility iteration of the workbench cloud enablement effort was merged.
+We are now doing some cleanup work in preparation for starting the Cicero backend, which will bring us nearly completely to the CI/CD integration.</p><p>We continue collaboration with SRE on production deployment of data publishing.  We now have a gradual rollout plan, which respects the plans for SRE infrastructure feature availability.</p><p>We are working on recovering the software dependency manifest feature that was lost with the organisation-wide transition to CHaP.</p><p>As usual, a number of smaller workbench, data analysis &amp; reporting improvements have been made.</p>]]></content>
+        <author>
+            <name>Serge Kosyrev</name>
+            <uri>https://github.com/deepfire</uri>
+        </author>
+        <category label="performance-tracing" term="performance-tracing"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Network Team Update]]></title>
         <id>2022-11-28-network</id>
