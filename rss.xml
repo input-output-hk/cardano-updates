@@ -9,6 +9,45 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
+            <title><![CDATA[Consensus Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-11-30-consensus</link>
+            <guid>2022-11-30-consensus</guid>
+            <pubDate>Wed, 30 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>During the past two weeks, the consensus team merged improvements to the monadic
+cursor API that was needed to implement LMDB range reads, which is in turn
+required for the implementation of the UTxO HD feature. We added tables to
+several tests in for the UTxO HD feature, which increases our confidence in the
+correctness of the prototype. The mempool property tests are close to being
+completed. Also, we finished the LSM tree tuning algorithm.</p><p>On the Genesis front we started simplifying the BlockFetch logic with
+CSJ-specific workloads in mind. </p><p>We are also documenting the Block Diffusion Pipelining feature, and added a
+high-level overview of consensus to the top level documentation of
+<code>ouroboros-network</code>.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="workstreams">Workstreams<a class="hash-link" href="#workstreams" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="utxo-hd-prototype">UTxO HD prototype<a class="hash-link" href="#utxo-hd-prototype" title="Direct link to heading">​</a></h3><p>We merged the implementation of a monadic cursor API (<a href="https://github.com/input-output-hk/lmdb-simple/pull/1" target="_blank" rel="noopener noreferrer">#1</a>)) which was
+needed to solve a bug with LMDB range-reads. After this PR was merged, we focused on
+bridging the gap between the <code>lmdb-simple</code> interface and consensus by facilitating
+using <code>lmdb-simple</code>'s cursor API without <code>Serialise</code> constraints (<a href="https://github.com/input-output-hk/lmdb-simple/pull/3" target="_blank" rel="noopener noreferrer">#3</a>).</p><p>We refactored the backing store property tests to use <code>quickcheck-lockstep</code>
+(<a href="https://github.com/input-output-hk/ouroboros-network/pull/4081" target="_blank" rel="noopener noreferrer">#4081</a>).</p><p>We added tables to the mock ledger in the UTxO-HD feature branch
+(<a href="https://github.com/input-output-hk/ouroboros-network/pull/4184" target="_blank" rel="noopener noreferrer">#4184</a>). Every test that used to run with <code>SimpleBlocks</code> now uses
+tables. This will enable us to exercise the UTxO HD mempool integration by
+leveraging the existing mempool property-tests. The new state-machine
+property-tests are still needed for testing the parallel behaviour of the
+mempool.</p><p>Our work on the mempool state-machine tests revealed the need for improvements
+in the <code>quickcheck-state-machine</code> library. Parallel testing assumed that the
+state machine did not have access to mutable references. However, the mempool
+tests require the use of such mutable references for mocking the ledger
+interface. As a result, our parallel tests were failing with rather obscure
+messages. @Jasagredo submitted a pull request (<a href="https://github.com/stevana/quickcheck-state-machine/pull/12" target="_blank" rel="noopener noreferrer">#12</a>) that allows for
+new mutable references to be created at each run of the state machine.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="backing-store-property-tests">Backing store property tests<a class="hash-link" href="#backing-store-property-tests" title="Direct link to heading">​</a></h4><h3 class="anchor anchorWithStickyNavbar_LWe7" id="lsm-tree-implementation">LSM tree implementation<a class="hash-link" href="#lsm-tree-implementation" title="Direct link to heading">​</a></h3><p>We finished the LSM Tree tuning algorithm. We are currently tidying up the code
+and gathering results (i.e., plots and their interpretation).</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="csj-prototype">CSJ prototype<a class="hash-link" href="#csj-prototype" title="Direct link to heading">​</a></h3><p>We started simplifying the BlockFetch logic with CSJ-specific workloads in mind.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-vrf-and-kes-crypto-integration">New VRF and KES crypto integration<a class="hash-link" href="#new-vrf-and-kes-crypto-integration" title="Direct link to heading">​</a></h3><p>Started working on supporting new version of <code>StandardCrypto</code> which uses compact
+KES and batched VRF (<a href="https://github.com/input-output-hk/ouroboros-network/issues/4151" target="_blank" rel="noopener noreferrer">#4151</a>).</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="technical-debt">Technical debt<a class="hash-link" href="#technical-debt" title="Direct link to heading">​</a></h3><p>We reviewed the existing state of the Block Diffusion Pipelining document. We
+are now working on the "Implementation" section (<a href="https://github.com/input-output-hk/ouroboros-network/issues/4020" target="_blank" rel="noopener noreferrer">#4020</a>).</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="fostering-collaboration">Fostering collaboration<a class="hash-link" href="#fostering-collaboration" title="Direct link to heading">​</a></h3><p>We cleared up our understanding of the error dynamics of forecasting
+(<a href="https://github.com/input-output-hk/ouroboros-network/pull/4146" target="_blank" rel="noopener noreferrer">#4146</a> and <a href="https://github.com/input-output-hk/ouroboros-network/pull/4174" target="_blank" rel="noopener noreferrer">#4174</a>).</p><p>We submitted a pull request that adds an overview of consensus to the <a href="https://input-output-hk.github.io/ouroboros-network/" target="_blank" rel="noopener noreferrer">top level
+documentation</a> of
+ouroboros-network (<a href="https://github.com/input-output-hk/ouroboros-network/pull/4197" target="_blank" rel="noopener noreferrer">#4197</a>). This overview describes the consensus components and adds a
+hyperlinked map to the modules documentation.</p><p><a href="https://github.com/input-output-hk/ouroboros-network/pull/4197" target="_blank" rel="noopener noreferrer">https://github.com/input-output-hk/ouroboros-network/pull/4197</a></p>]]></content:encoded>
+            <category>consensus</category>
+        </item>
+        <item>
             <title><![CDATA[Performance & tracing update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-11-30-performance-and-tracing</link>
             <guid>2022-11-30-performance-and-tracing</guid>
