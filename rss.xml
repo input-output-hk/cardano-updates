@@ -30,6 +30,16 @@ docker.</p></li></ul>]]></content:encoded>
             <category>db-sync</category>
         </item>
         <item>
+            <title><![CDATA[System Test Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-12-01-system-test</link>
+            <guid>2022-12-01-system-test</guid>
+            <pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>During the last 2 weeks we did more improvements on our Test Framework, planned the testing of the <em>P2P Single
+Relay</em> functionality, and also tested some DB-Sync tags.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="workstreams">Workstreams<a class="hash-link" href="#workstreams" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="framework-improvements">Framework improvements:<a class="hash-link" href="#framework-improvements" title="Direct link to heading">​</a></h3><ul><li>moved the System Test CLI Pipelines from BuildKite to Github Actions</li><li>improved the reporting tools to support the rerun of the failled tests and update of the reports </li><li>added support for Github API in <a href="https://github.com/mkoura/report-aggregator" target="_blank" rel="noopener noreferrer">report-aggregator</a>, so reports will be generated from the GitHub nightly jobs from now on</li><li>added support for mixed topology - P2P, legacy, mixed topologies</li><li>planned the P2P Single Relay system test activities </li><li>added support to start regression tests with PV8 + better selection of tests</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="db-sync">DB-Sync:<a class="hash-link" href="#db-sync" title="Direct link to heading">​</a></h3><ul><li>confirmed that DB-Sync release 13.0.5 is compatible with Node release 1.35.4 + Protocol Version 8 (on the Preview environment)</li><li>tested a couple db-sync tags - 13.1.0.0-rc1, 13.1.0.0-rc2</li></ul>]]></content:encoded>
+            <category>system-test</category>
+        </item>
+        <item>
             <title><![CDATA[Consensus Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-11-30-consensus</link>
             <guid>2022-11-30-consensus</guid>
