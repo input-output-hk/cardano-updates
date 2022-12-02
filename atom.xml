@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-12-01T00:00:00.000Z</updated>
+    <updated>2022-12-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Hydra Team Update]]></title>
+        <id>2022-12-02-hydra</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-12-02-hydra"/>
+        <updated>2022-12-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High-level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High-level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>This week, the Hydra team has worked on cleaning up several things in progress
+after last week's summit. They have extended their model-based testing (MBT)
+approach with transaction creation &amp; observation
+<a href="https://github.com/input-output-hk/hydra/issues/410" target="_blank" rel="noopener noreferrer">#410</a>, solved
+<code>AcquirePointTooOld</code> problems of the <code>hydra-node</code> with by changing the wallet
+initialization <a href="https://github.com/input-output-hk/hydra/issues/439" target="_blank" rel="noopener noreferrer">#439</a>.
+Also, the Hydra researchers updated the security proofs of the Coordinated Hydra
+Head, which are bound to be included in the Hydra HeadV1 specification.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-did-the-team-achieve-this-week">What did the team achieve this week<a class="hash-link" href="#what-did-the-team-achieve-this-week" title="Direct link to heading">​</a></h2><ul><li>Monthly review &amp; report - will also be published on our website <a href="https://github.com/input-output-hk/hydra/pull/644" target="_blank" rel="noopener noreferrer">#644</a></li><li>Extended the model-based testing (MBT) with transaction creation/observation <a href="https://github.com/input-output-hk/hydra/issues/410" target="_blank" rel="noopener noreferrer">#410</a></li><li>Solve <code>AcquirePointTooOld</code> problems with new wallet initialization <a href="https://github.com/input-output-hk/hydra/issues/439" target="_blank" rel="noopener noreferrer">#439</a></li><li>Fixed our hydraw deployments (EC2 instances)</li><li>Created &amp; discussed <a href="https://github.com/input-output-hk/hydra/blob/7e532bd1c8a840a8155cf4b0858b982308dfc3f0/docs/adr/CloseTx-validity-bounds-and-deadline-calculation-DoS.md" target="_blank" rel="noopener noreferrer">ADR21</a> within tx validity work</li><li>Received &amp; discussed security proofs of Coordinated Hydra Head (requires more work)</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-the-goals-of-next-week">What are the goals of next week<a class="hash-link" href="#what-are-the-goals-of-next-week" title="Direct link to heading">​</a></h2><ul><li>Get ADR21 accepted &amp; close tx validity gap in our implementation</li><li>Complete review &amp; integrate the Hydra tutorial</li><li>Review latest hydra-pay work</li><li>Have a LaTeX write-up of the HeadV1 (Coordinated Hydra Head) spec</li><li>Get Cicero (new CI) working</li></ul>]]></content>
+        <author>
+            <name>Sebastian Nagel</name>
+            <uri>https://github.com/ch1bo</uri>
+        </author>
+        <category label="hydra" term="hydra"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[DB sync Team Update]]></title>
         <id>2022-12-01-db-sync</id>
