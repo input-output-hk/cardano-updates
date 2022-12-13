@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-12-09T00:00:00.000Z</updated>
+    <updated>2022-12-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Network Team Update]]></title>
+        <id>2022-12-12-network</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-12-12-network"/>
+        <updated>2022-12-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>In last sprint the team focused on preparations for the conference talk at
+<a href="https://sites.uclouvain.be/OPODIS2022/" target="_blank" rel="noopener noreferrer">OPODIS 2022</a>.  We also worked on preparations to publish <code>io-sim</code> and related
+packages on Hackage (<a href="https://github.com/input-output-hk/io-sim/pull/57" target="_blank" rel="noopener noreferrer">PR #57</a>, <a href="https://github.com/input-output-hk/io-sim/pull/60" target="_blank" rel="noopener noreferrer">PR #60</a>).</p><p>We also started reviewing:</p><ul><li><code>ouroboros-network</code></li><li><code>cardano-node</code></li><li><code>cardano-ledger</code>
+repositories for open-source readiness (<a href="https://github.com/input-output-hk/ouroboros-network/pull/4218" target="_blank" rel="noopener noreferrer">PR #4128</a>).</li></ul>]]></content>
+        <author>
+            <name>Marcin Szamotulski</name>
+            <uri>https://github.com/coot</uri>
+        </author>
+        <category label="network" term="network"/>
+        <category label="release" term="release"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hydra Team Update]]></title>
         <id>2022-12-09-hydra</id>
