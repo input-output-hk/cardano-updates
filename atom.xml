@@ -16,7 +16,8 @@
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>In last sprint the team focused on preparations for the conference talk at
 <a href="https://sites.uclouvain.be/OPODIS2022/" target="_blank" rel="noopener noreferrer">OPODIS 2022</a>.  We also worked on preparations to publish <code>io-sim</code> and related
 packages on Hackage (<a href="https://github.com/input-output-hk/io-sim/pull/57" target="_blank" rel="noopener noreferrer">PR #57</a>, <a href="https://github.com/input-output-hk/io-sim/pull/60" target="_blank" rel="noopener noreferrer">PR #60</a>).</p><p>We also started reviewing:</p><ul><li><code>ouroboros-network</code></li><li><code>cardano-node</code></li><li><code>cardano-ledger</code>
-repositories for open-source readiness (<a href="https://github.com/input-output-hk/ouroboros-network/pull/4218" target="_blank" rel="noopener noreferrer">PR #4128</a>).</li></ul>]]></content>
+repositories for open-source readiness (<a href="https://github.com/input-output-hk/ouroboros-network/pull/4218" target="_blank" rel="noopener noreferrer">PR #4128</a>).</li></ul><p>We prepared a PR which changes how <code>node-to-node</code> and <code>node-to-client</code> protocol
+versiones are serialised in <code>cardano-node</code> log (<a href="https://github.com/input-output-hk/cardano-node/pull/4691" target="_blank" rel="noopener noreferrer">PR #4691</a>).</p>]]></content>
         <author>
             <name>Marcin Szamotulski</name>
             <uri>https://github.com/coot</uri>
