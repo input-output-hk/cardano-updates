@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-12-12T00:00:00.000Z</updated>
+    <updated>2022-12-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[DB-sync Team Update]]></title>
+        <id>2022-12-14-db-sync</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-12-14-db-sync"/>
+        <updated>2022-12-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>The DBSync team continued testing release <code>13.1.0.0</code>. The QA team has reported that no issues have
+been found. The DBSync team also worked on cherry-picks back to master and on fixing bugs.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lower-level-summary">Lower level summary<a class="hash-link" href="#lower-level-summary" title="Direct link to heading">​</a></h2><ul><li>Release is cherry-picked back to master, which uses the new rollback mechanism which uses
+reverse indexes, same as the release
+<a href="https://github.com/input-output-hk/cardano-db-sync/pull/1320" target="_blank" rel="noopener noreferrer">#1320</a>
+This also fixes a bug number of issues on master.</li><li>Depenencies upgrade and CHaP integration
+<a href="https://github.com/input-output-hk/cardano-db-sync/pull/1324" target="_blank" rel="noopener noreferrer">#1324</a></li><li>AdaPots fix <a href="https://github.com/input-output-hk/cardano-db-sync/pull/1323" target="_blank" rel="noopener noreferrer">#1323</a>. This
+fixes an issue where the per epoch AdaPots didn't match the epoch boundary, but
+they also included changes from the first block of the epoch.</li><li>Deposits Event fix <a href="https://github.com/input-output-hk/cardano-ledger/pull/3212" target="_blank" rel="noopener noreferrer">#3212</a>. This pr
+adjusts the Deposits ledger events, so that it can be better used by db-sync. This can reduce the
+number of queries that db-sync does during syncing an make syncing faster.</li></ul>]]></content>
+        <author>
+            <name>Kostas Dermentzis</name>
+            <uri>https://github.com/kderme</uri>
+        </author>
+        <category label="db-sync" term="db-sync"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Network Team Update]]></title>
         <id>2022-12-12-network</id>
