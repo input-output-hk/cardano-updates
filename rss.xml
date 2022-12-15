@@ -9,6 +9,56 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
+            <title><![CDATA[Consensus Team Update]]></title>
+            <link>https://input-output-hk.github.io/cardano-updates/2022-12-14-consensus</link>
+            <guid>2022-12-14-consensus</guid>
+            <pubDate>Wed, 14 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[High level summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>During the past two weeks, the Consensus team finalized the QSM tests for the
+backing store and Mempool on the UTxO-HD branch with important discoveries
+regarding parallel QSM testing. We also worked with the Ledger team to envisage
+the modifications that are required in Ledger and Consensus to accommodate the
+changes in the crypto VRF and KES. The <code>db-analyser</code> now supports bechmarking
+the ledger operations, which will allow us to identify, debug, and profile
+potential performance problems. We drafted a document that defines how to manage
+the versions of Consensus-related packages. The top level documentation of
+<code>ouroboros-network</code> now features a description of the consensus components and
+provides a hyperlinked map to the modules documentation.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="workstreams">Workstreams<a class="hash-link" href="#workstreams" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="utxo-hd-prototype">UTxO HD prototype<a class="hash-link" href="#utxo-hd-prototype" title="Direct link to heading">​</a></h3><p>Whereas we had passing sequential state-machine tests for the mempool, the
+parallel case proved to be more challenging than we thought. The operation of
+adding a list of transactions to the mempool is not atomic and, as a result,
+when adding a list of transactions, transactions from other processes can be
+added in between. The mempool implementation handles this correctly, however
+this required us to <a href="https://github.com/input-output-hk/ouroboros-network/pull/4076" target="_blank" rel="noopener noreferrer">redesign</a> the parallel model we had to take
+the lack of atomicity into account.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="backing-store-property-tests">Backing store property tests<a class="hash-link" href="#backing-store-property-tests" title="Direct link to heading">​</a></h4><p>We finished refactoring the backing store property tests. The second review
+round is ongoing.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="lsm-tree-implementation">LSM tree implementation<a class="hash-link" href="#lsm-tree-implementation" title="Direct link to heading">​</a></h3><p>We are working on benchmarking (in terms of time and number of IO operations)
+fetching/looking up data from disk.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="genesis">Genesis<a class="hash-link" href="#genesis" title="Direct link to heading">​</a></h3><p>We worked on the design of a mechanism to prevent a DoS attack on our Genesis
+design related to rollbacks. This was arguably the biggest outstanding question.</p><p>During the discussions around Genesis, we noticed a design boundary that nicely
+delineates a fundamental component. We almost have a full Haskell prototype of
+it. It will be very nicely self-contained, perhaps even usable in the ultimate
+implementation!</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-vrf-and-kes-crypto-integration">New VRF and KES crypto integration<a class="hash-link" href="#new-vrf-and-kes-crypto-integration" title="Direct link to heading">​</a></h3><p>We collaborated with the Ledger team on preparing the ledger state and crypto
+types to avoid huge allocation on the epoch boundary when changing aspects of
+the crypto that will only manifest in headers, not in the ledger states.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="technical-debt">Technical debt<a class="hash-link" href="#technical-debt" title="Direct link to heading">​</a></h3><p>We merged the <a href="https://github.com/input-output-hk/ouroboros-network/pull/4014" target="_blank" rel="noopener noreferrer">pull-request</a> that adds a support to <code>db-analyser</code> for
+benchmarking ledger operations. This will allow us to identify, debug, and
+profile potential performance problems. The benchmark focus on the main 5 ledger
+operations that are involved in chain syncing, block forging, and block
+validation, namely:</p><ol start="0"><li>Forecast.</li><li>Header tick.</li><li>Header application.</li><li>Block tick.</li><li>Block application.</li></ol><p>The following figure shows a plot of the benchmarking results for the first 65
+million blocks (approximately) of the Cardano chain. The thin yellow lines under
+the x-axis show the epoch boundaries, whereas the thick yellow lines correspond
+to the era transitions.</p><p><img loading="lazy" src="/cardano-updates/assets/images/2022-12-14-ledger-ops-benchmark-c46be3db45ff5480ed104e0d520711a6.png" width="1600" height="800" class="img_ev3q"></p><p>As we can see in this figure, era and epoch boundaries require more computation
+time. The ledger team are aware of this problem, and we are working to improve
+this situation.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="fostering-collaboration">Fostering collaboration<a class="hash-link" href="#fostering-collaboration" title="Direct link to heading">​</a></h3><p>We <a href="https://github.com/input-output-hk/ouroboros-network/pull/4207" target="_blank" rel="noopener noreferrer">drafted a document</a> motivating and defining how Consensus (and
+possibly other core teams) will/should manage our package versions. This
+pull-request garnered many great discussions from our team members and other
+teams too: Sebastian Nagel, Arnaud Bailly, Michael Peyton-Jones, Ziyang Liu, et
+al. We want to thank you all for your input, and we found this discussion very
+enlightening!</p><p>We merged the <a href="https://github.com/input-output-hk/ouroboros-network/pull/4197" target="_blank" rel="noopener noreferrer">pull request</a> that adds an overview of consensus to
+the <a href="https://input-output-hk.github.io/ouroboros-network/" target="_blank" rel="noopener noreferrer">top level
+documentation</a> of
+ouroboros-network. This overview describes the consensus components and adds a
+hyperlinked map to the modules documentation.</p>]]></content:encoded>
+            <category>consensus</category>
+        </item>
+        <item>
             <title><![CDATA[DB-sync Team Update]]></title>
             <link>https://input-output-hk.github.io/cardano-updates/2022-12-14-db-sync</link>
             <guid>2022-12-14-db-sync</guid>
