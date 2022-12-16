@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://input-output-hk.github.io/cardano-updates/</id>
     <title>Cardano Updates Feed</title>
-    <updated>2022-12-15T00:00:00.000Z</updated>
+    <updated>2022-12-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://input-output-hk.github.io/cardano-updates/"/>
     <subtitle>Regular updates from Cardano Development Teams</subtitle>
     <icon>https://input-output-hk.github.io/cardano-updates/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Hydra Team Update]]></title>
+        <id>2022-12-16-hydra</id>
+        <link href="https://input-output-hk.github.io/cardano-updates/2022-12-16-hydra"/>
+        <updated>2022-12-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High-level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="high-level-summary">High-level summary<a class="hash-link" href="#high-level-summary" title="Direct link to heading">​</a></h2><p>This week, the Hydra team kicked off a new project together with Catalyst, the Cardano Foundation and researchers from IO: a proof of concept for voting on Hydra. The concluded work on validating the Head protocol using model-based testing and formulated next steps, fixed the transaction cost benchmark reporting on <a href="https://hydra.family/head-protocol/benchmarks/transaction-cost/" target="_blank" rel="noopener noreferrer">the website</a> and reduced the cost for commit transactions by ~30% with the help of reference scripts.</p><p>The year is coming to an end and velocity will slow down a bit while the team focuses on wrapping up loose ends. The updates here will pause until January 2023.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-did-the-team-achieve-this-week">What did the team achieve this week<a class="hash-link" href="#what-did-the-team-achieve-this-week" title="Direct link to heading">​</a></h2><ul><li>Kicked-off Hydra Voting project with Catalyst, CF, and IO Research.</li><li>Reduce commit transaction costs by ~30% with reference scripts.</li><li>Prepared an RFP for external audit of the Hydra Head solution.</li><li>Fixed transaction cost benchmarks for abort tx <a href="https://github.com/input-output-hk/hydra/issues/631" target="_blank" rel="noopener noreferrer">#631</a>.</li><li>Recorded decision to use model-based testing (<a href="https://hydra.family/head-protocol/adr/22/" target="_blank" rel="noopener noreferrer">ADR22</a>) and improved Model <a href="https://hydra.family/head-protocol/haddock/hydra-node/tests/Hydra-Model.html" target="_blank" rel="noopener noreferrer">documentation</a>.<ul><li>Concluding the first increment on <!-- -->“<!-- -->Validate coordinated Head protocol<!-- -->”<!-- --> <a href="https://github.com/input-output-hk/hydra/issues/194" target="_blank" rel="noopener noreferrer">#194</a>.</li><li>Formulated next step / follow-up on testing the Soundness property of our protocol <a href="https://github.com/input-output-hk/hydra/issues/656" target="_blank" rel="noopener noreferrer">#656</a>.</li></ul></li><li>Switched to using nix flakes for development setup and CI build <a href="https://github.com/input-output-hk/hydra/pull/646" target="_blank" rel="noopener noreferrer">#646</a>.</li></ul><h1>What are the goals of next week</h1><ul><li>Push <a href="https://github.com/input-output-hk/hydra/blob/7e532bd1c8a840a8155cf4b0858b982308dfc3f0/docs/adr/CloseTx-validity-bounds-and-deadline-calculation-DoS.md" target="_blank" rel="noopener noreferrer">ADR21</a> &amp; tx validity gap over the finish line (smoke tests missing).</li><li>Integrate the <code>hydra-tutorial</code>.</li><li>Have a LaTeX write-up of the HeadV1 (Coordinated Hydra Head) spec.</li><li>Close &amp; recap on the year with another monthly report (+ blog post).</li></ul>]]></content>
+        <author>
+            <name>Sebastian Nagel</name>
+            <uri>https://github.com/ch1bo</uri>
+        </author>
+        <category label="hydra" term="hydra"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mithril Team Update]]></title>
         <id>2022-12-15-mithril</id>
